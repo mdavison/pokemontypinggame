@@ -15,10 +15,11 @@
 //    return view('welcome');
 //});
 
-Route::get('/', function () {
-    return view('index');
-});
+//Route::get('/', function () {
+//    return view('index');
+//});
 
+Route::get('/', 'Pages\PokemonTypingGameController@index');
 Route::get('/pokemon/typing-game', 'Pages\PokemonTypingGameController@index');
 Route::get('/pokemon/typing-game/{pokemonIndex}', 'Pages\PokemonTypingGameController@show');
 Route::get('/pokemon/math-game', 'Pages\PokemonMathGameController@index');

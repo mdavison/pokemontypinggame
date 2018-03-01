@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/css/page.css">
     @yield('styles')
 
-    <title>Peanut Butter Sandwich</title>
+    <title>Pok&eacute;mon Typing Game</title>
 </head>
 <body>
 
