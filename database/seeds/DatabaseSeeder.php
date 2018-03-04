@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(RoleUserTableSeeder::class);
         $this->call(PokemonTableSeeder::class);
-        $this->call(EquationsTableSeeder::class);
+        //$this->call(EquationsTableSeeder::class);
     }
 }

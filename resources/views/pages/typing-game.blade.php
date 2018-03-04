@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h2>Pok&eacute;mon Typing Game</h2>
-        <p>Type the name of the Pok&eacute;mon to catch it. When you type it correctly it will automatically get added to your collection (as long as you are logged in).</p>
+        <p>Type the name of the Pok&eacute;mon to catch it. When you type it correctly it will automatically get added to your collection.</p>
         <hr>
         <div class="row">
             <div class="col">
