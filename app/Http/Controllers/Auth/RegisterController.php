@@ -90,7 +90,10 @@ class RegisterController extends Controller
 //                    ->subject('Please verify your email address');
 //        });
         Mail::send('email.verify', compact('confirmationCode'), function ($message) use ($user) {
-            $message->from('us@peanutbuttersandwich.com', 'Peanut Butter Sandwich');
+            //$message->from('us@peanutbuttersandwich.com', 'Peanut Butter Sandwich');
+            $fromAddress = env('MAIL_FROM_ADDRESS', 'noreply@pokemontypinggame.com');
+            $fromName = env('MAIL_FROM_NAME', 'Pokemon Typing Game');
+            $message->from($fromAddress, $fromName);
             //$message->to(Input::get('email'), Input::get('name'))->subject('Please verify your email address');
             $message->to($user->email, $user->name)->subject('Please verify your email address');
         });
