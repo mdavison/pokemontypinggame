@@ -41,3 +41,6 @@ Route::delete('/pokemon/user', 'PokemonController@removeUser');
 
 // My Pokemon page
 Route::get('/user/{user}/pokemon', 'UsersController@showPokemon');
+
+// Update Account
+Route::post('/user/{user}/account/update', 'UsersController@update');

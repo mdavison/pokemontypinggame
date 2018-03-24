@@ -26,6 +26,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="/user/{{ Auth::user()->id }}/pokemon">My Pok&eacute;mon</a>
+                    <a class="dropdown-item" href="/home">My Account</a>
                     <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                         Log Out
