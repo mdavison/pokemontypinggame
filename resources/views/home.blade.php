@@ -70,7 +70,21 @@
                             </div>
                         </div>
                     </form>
+
+                    <hr>
+
+                    <form class="form-horizontal" method="POST" action="/user/{{ $user->id }}/account">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+
+                        <button type="submit" class="btn btn-danger">
+                            Delete My Account
+                        </button>
+
+                    </form>
+
                 </div>
+
             </div>
 
 

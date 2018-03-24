@@ -81,4 +81,15 @@ class ManageAccountTest extends TestCase
 
         $this->assertDatabaseMissing('users', ['id' => $user->id, 'email' => $invalidEmail]);
     }
+
+    /** @test */
+    public function a_user_can_delete_their_account()
+    {
+        $this->signIn();
+
+        $user = User::find(auth()->id());
+        $this->delete('/user/' . $user->id . '/account')->assertRedirect('/');
+
+        $this->assertDatabaseMissing('users', ['id' => $user->id]);
+    }
 }

@@ -53,7 +53,7 @@ class LoginController extends Controller
 
         // Check to see if email has been verified
         $user = User::whereEmail($request->email)->first();
-        if (!$user->confirmed) {
+        if ((!empty($user)) && (!$user->confirmed)) {
             // TODO: Set up a "resend" link
             return redirect('/login')->with('error', 'Your email address has not been verified. Please check your email and click the email verification link.');
         }

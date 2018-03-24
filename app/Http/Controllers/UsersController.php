@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
+    /**
+     * @param User $user
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function showPokemon(User $user)
     {
         $pokemon = $user->pokemon->sortBy('index');
@@ -18,6 +22,10 @@ class UsersController extends Controller
         return view('users.pokemon', compact('pokemon', 'letters'));
     }
 
+    /**
+     * @param User $user
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(User $user)
     {
         $this->validate(request(), [
@@ -33,5 +41,19 @@ class UsersController extends Controller
         $user->save();
 
         return back();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  User $user
+     * @return \Illuminate\Http\Response
+     * @throws \Exception
+     */
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect('/');
     }
 }
