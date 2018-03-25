@@ -54,6 +54,10 @@ class UsersController extends Controller
     {
         $user->delete();
 
-        return redirect('/');
+        if (request()->wantsJson()) {
+            return json_encode(['result' => 'success', 'redirectURL' => '/', 'message' => 'Your account has been deleted.']);
+        }
+
+        return redirect('/')->with('message', 'Your account has been deleted');
     }
 }

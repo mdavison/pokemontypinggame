@@ -73,13 +73,14 @@
 
                     <hr>
 
-                    <form class="form-horizontal" method="POST" action="/user/{{ $user->id }}/account">
+                    <form class="form-horizontal" method="POST" action="/user/{{ $user->id }}/account" id="delete-account">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 
-                        <button type="submit" class="btn btn-danger">
+                        <button type="submit" class="btn btn-danger" id="delete-account-button">
                             Delete My Account
                         </button>
+                        <button class="btn btn-default invisible" type="submit" id="cancel-button">Cancel</button> <button class="btn btn-danger invisible" type="submit" id="confirm-button">Confirm</button>
 
                     </form>
 
@@ -91,4 +92,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script src="/js/forms.js"></script>
 @endsection
