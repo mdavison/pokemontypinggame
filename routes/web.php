@@ -22,6 +22,19 @@
 Route::get('/', 'Pages\PokemonTypingGameController@index');
 Route::get('/pokemon/typing-game/{pokemonIndex}', 'Pages\PokemonTypingGameController@show');
 
+Route::get('/privacy', function() {
+    // Remove the flash message about not being logged in
+    request()->session()->forget('message');
+
+    return view('pages/privacy');
+});
+Route::get('/contact', function() {
+    // Remove the flash message about not being logged in
+    request()->session()->forget('message');
+
+    return view('pages/contact');
+});
+
 // Admin
 Route::get('/admin/', 'Admin\AdminController@index');
 
